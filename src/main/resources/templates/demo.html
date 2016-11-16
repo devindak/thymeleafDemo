@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Application Demo UI</title>
+</head>
+<body>
+
+<h3>
+    <p th:text="${message}" />
+</h3>
+<hr/>
+
+<div id="left">
+    <form role="form" action="/demo/submitForm" method="post">
+        <div>
+            <label for="username">Username</label>
+
+            <div>
+                <input id="username" size="120" name="username" type="text" class="form-control"/>
+            </div>
+        </div>
+        <div>
+            <label for="password">Password</label>
+
+            <div>
+                <input id="password" size="120" name="password" type="text" class="form-control"/>
+            </div>
+        </div>
+        <div>
+            <div>
+                <input class="button" type="submit" value="Submit"/>
+            </div>
+        </div>
+    </form>
+</div>
+<hr/>
+
+<h3>Submitted Data</h3>
+
+<p th:text="${username}"/>
+
+<p th:text="${password}"/>
+<hr/>
+
+<h3>Looping Example</h3>
+<a href="/demo/iterate">Iterate</a>
+
+<p th:each="name : ${namesList}"
+   th:text="${name}"/>
+
+</body>
+</html>
